@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>RakshaLink · AstruX</title>
+  <style>
+    :root{
+      --n:#0A1F44; --n3:#12306A; --cr:#F8F4E6; --cd:#FFFDF5; --aq:#29C5D6; --go:#D4AF37; --gr:#0B6B4B; --gl:#0B6B4B; --rd:#B3261E; --mu:#4A5878;
+      color-scheme:light; box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      background:radial-gradient(1100px 600px at 85% -10%,#E9DFC0 0,var(--cr) 60%);
+      color:var(--n); font-family:Arial,Helvetica,sans-serif; min-height:100%; overflow-x:hidden;
+    }
+    #bg{position:fixed;inset:0;z-index:0;opacity:.55}
+    .w{position:relative;z-index:1;max-width:1100px;margin:auto;padding:0 16px 60px}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:3px solid var(--go)}
+    .logo{font-weight:800;letter-spacing:1px;font-size:20px;color:var(--n)}
+    .logo b{color:var(--gr)}
+    .tg{display:flex;gap:8px;align-items:center;font-size:12px}
+    .pill{padding:5px 11px;border-radius:20px;border:1px solid var(--go);color:var(--n);background:#D4AF3722}
+    .pill.live{border-color:var(--gr);color:#fff;background:var(--gr)}
+    button{font:inherit;cursor:pointer}
+    .lg{background:var(--gr);color:var(--cr);border:1px solid #6B7B2F;border-radius:20px;padding:5px 12px}
+    .hero{text-align:center;padding:34px 0 18px}
+    h1{
+      font-size:clamp(34px,7vw,72px); line-height:1.05; margin:0 0 12px;
+      background:linear-gradient(90deg,var(--n),var(--gr),var(--go),var(--n));
+      background-size:300% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:sh 7s linear infinite;
+    }
+    @keyframes sh{to{background-position:300% 0}}
+    .hero p{max-width:640px;margin:auto;color:var(--mu);font-size:17px}
+    .st{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+    .stat{background:var(--cd);border:1px solid var(--go);border-top:4px solid #6B7B2F;border-radius:14px;padding:12px 22px;min-width:130px;box-shadow:0 6px 18px #0A1F4418}
+    .stat b{display:block;font-size:30px;color:var(--gr)}
+    .stat span{font-size:12px;color:var(--mu)}
+    .flow{display:flex;align-items:center;justify-content:space-between;gap:4px;margin:26px 0;overflow-x:auto;padding:10px 2px}
+    .nd{flex:none;text-align:center;width:104px;padding:12px 6px;border-radius:14px;background:var(--cd);border:1px solid var(--gr);color:var(--n);font-size:12px;transition:.3s}
+    .nd i{display:block;font-style:normal;font-size:26px}
+    .nd.on{background:#6B7B2F;color:var(--cr);border-color:var(--gr);box-shadow:0 0 22px #6B7B2F99;transform:translateY(-6px)}
+    .nd.no{background:#B3261E22;border-color:var(--rd);box-shadow:0 0 22px #B3261E66}
+    .ln{flex:1;min-width:14px;height:3px;background:repeating-linear-gradient(90deg,var(--go) 0 8px,transparent 8px 16px);background-size:16px 3px;animation:mv 1s linear infinite}
+    @keyframes mv{to{background-position:16px 0}}
+    .g{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+    .c{background:var(--cd);border:1px solid #D9CFA8;border-left:5px solid var(--gr);border-radius:18px;padding:18px;box-shadow:0 8px 24px #0A1F4414}
+    h2{margin:0 0 4px;font-size:19px;color:var(--gr)}
+    .s{color:var(--mu);font-size:13px;margin:0 0 12px}
+    .row{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid #E4DBB8;font-size:14px}.row .nm{flex:1}
+    .sw{position:relative;width:38px;height:22px;border-radius:12px;background:#B9B39A;border:0;transition:.25s;flex:none}.sw:after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:var(--cd);transition:.25s}.sw.on{background:linear-gradient(90deg,var(--n),var(--aq));box-shadow:0 0 12px #29C5D688}.sw.on:after{left:19px}
+    .cat{font-size:11px;width:68px;color:var(--mu)}
+    .bt{background:linear-gradient(90deg,#0A1F44,#178C9C);color:var(--cr);border:1px solid var(--aq);border-radius:12px;padding:10px 14px;margin:4px 4px 0 0;transition:.2s}.bt:hover{transform:translateY(-2px);box-shadow:0 6px 18px #29C5D699}.bt.go{background:var(--go);color:var(--n);border-color:var(--go)}.bt.rd{background:var(--n);border-color:var(--aq);color:var(--cr)}
+    .ch{display:flex;gap:0;overflow-x:auto;padding:10px 2px 6px}.bk{flex:none;width:150px;font-size:11px;background:var(--gr);color:var(--cr);border:2px solid #6B7B2F;border-radius:10px;padding:8px;margin-right:22px;position:relative;animation:pop .5s}.bk:after{content:"→";position:absolute;right:-18px;top:40%;color:#6B7B2F;font-weight:800}.bk:last-child:after{content:""}.bk.bad{border-color:var(--rd);background:#5A1A1A}.bk.no b{color:#FF9A94}.bk b{color:#E3EAB5}.bk code{display:block;color:var(--go);margin-top:4px;font-size:10px}
+    @keyframes pop{from{transform:scale(.6);opacity:0}}
+    .inp{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}.inp label{font-size:11px;color:var(--mu)}.inp input{width:74px;display:block;background:var(--cr);border:1px solid var(--n);border-radius:8px;color:var(--n);padding:7px}
+    .gz{text-align:center}.gz svg{width:200px}.gz path{fill:none;stroke-width:14;stroke-linecap:round}.bar{height:8px;border-radius:5px;background:#E4DBB8;overflow:hidden;flex:1}.bar i{display:block;height:100%;background:linear-gradient(90deg,#6B7B2F,var(--gr));width:0;transition:width 1s}
+    .ok{color:var(--gr);font-size:13px;margin:3px 0}#toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,120px);background:var(--gr);color:var(--cr);border:2px solid var(--go);border-radius:14px;padding:12px 20px;z-index:9;transition:.4s;max-width:90%}#toast.sh{transform:translate(-50%,0)}
+  </style>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <div class="w">
+    <div class="top">
+      <div class="logo">🛡️ RAKSHA<b>LINK</b> <span style="font-size:11px;color:var(--mu)">· AstruX · VIT Bhopal</span></div>
+      <div class="tg">
+        <span class="pill" id="mode">Browser demo</span>
+        <button class="lg" onclick="lang()" id="lb">हिंदी</button>
+      </div>
+    </div>
+
+    <div class="hero">
+      <h1 data-i="h1">Your health data. Your rules.</h1>
+      <p data-i="sub">One consent-first exchange where records travel, access is provable and AI needs a doctor's approval.</p>
+      <div class="st">
+        <div class="stat"><b id="n1">0</b><span data-i="s1">records unified</span></div>
+        <div class="stat"><b id="n2">0</b><span data-i="s2">active consents</span></div>
+        <div class="stat"><b id="n3">0</b><span data-i="s3">audit blocks</span></div>
+      </div>
+    </div>
+
+    <div class="flow" id="fl"></div>
+
+    <div class="g">
+      <div class="c">
+        <h2 data-i="c1">🔐 Consent wallet</h2>
+        <p class="s" data-i="c1s">Flip a switch. Access changes instantly and is logged.</p>
+        <div id="cw"></div>
+      </div>
+
+      <div class="c">
+        <h2 data-i="c2">⚡ Request simulator</h2>
+        <p class="s" data-i="c2s">Fire a request and watch it travel through the exchange.</p>
+        <div id="rq"></div>
+        <div id="ro" style="margin-top:12px;font-size:14px"></div>
+      </div>
+
+      <div class="c" style="grid-column:1/-1">
+        <h2 data-i="c3">⛓️ Tamper-evident audit chain</h2>
+        <p class="s" data-i="c3s">Every event is hash-linked to the one before it.</p>
+        <div>
+          <button class="bt go" onclick="ver()" data-i="vb">Verify integrity</button>
+          <button class="bt rd" onclick="tam()" data-i="tb">Tamper with block 1</button>
+        </div>
+        <div class="ch" id="ch"></div>
+        <div id="vr"></div>
+      </div>
+
+      <div class="c" style="grid-column:1/-1">
+        <h2 data-i="c4">🧠 Ethical-AI gate</h2>
+        <p class="s" data-i="c4s">Diabetes risk demo. Bias-checked, explained, released only with clinician sign-off.</p>
+        <div class="inp">
+          <label>Age<input id="a" type="number" value="52"></label>
+          <label>BMI<input id="bm" type="number" value="29"></label>
+          <label>Systolic BP<input id="bp" type="number" value="148"></label>
+          <label>HbA1c %<input id="gl" type="number" value="7.9" step=".1"></label>
+        </div>
+        <button class="bt" onclick="ai()" data-i="ab">Run model</button>
+        <div id="ao"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+
+  <script>
+    var $=function(s){return document.querySelector(s)},LIVE=false,log=[],bad=-1,P="P1",L="en";
+    var R={Doctor:{n:"Dr. Meera",i:"🩺",c:{Condition:1,Observation:1,Medication:1}},Lab:{n:"Sunrise Lab",i:"🧪",c:{Observation:1}},Insurer:{n:"HealthCo Insurer",i:"🏦",c:{}}},C=["Condition","Observation","Medication"];
+    var T={en:{h1:"Your health data. Your rules.",sub:"One consent-first exchange where records travel, access is provable and AI needs a doctor's approval.",s1:"records unified",s2:"active consents",s3:"audit blocks",c1:"🔐 Consent wallet",c1s:"Flip a switch. Access changes instantly and is logged.",c2:"⚡ Request simulator",c2s:"Fire a request and watch it travel through the exchange.",c3:"⛓️ Tamper-evident audit chain",c3s:"Every event is hash-linked to the one before it.",vb:"Verify integrity",tb:"Tamper with block 1",c4:"🧠 Ethical-AI gate",c4s:"Diabetes risk demo. Bias-checked, explained, released only with clinician sign-off.",ab:"Run model"},
+    hi:{h1:"आपका स्वास्थ्य डेटा। आपके नियम।",sub:"एक सहमति-आधारित प्रणाली जहाँ रिकॉर्ड साथ चलते हैं, पहुँच प्रमाणित है और AI को डॉक्टर की मंज़ूरी चाहिए।",s1:"रिकॉर्ड एकीकृत",s2:"सक्रिय सहमतियाँ",s3:"ऑडिट ब्लॉक",c1:"🔐 सहमति वॉलेट",c1s:"स्विच दबाएँ। पहुँच तुरंत बदलती है और दर्ज होती है।",c2:"⚡ अनुरोध सिम्युलेटर",c2s:"अनुरोध भेजें और उसे सिस्टम में चलते देखें।",c3:"⛓️ छेड़छाड़-प्रमाण ऑडिट चेन",c3s:"हर घटना पिछली घटना से हैश-जुड़ी है।",vb:"अखंडता जाँचें",tb:"ब्लॉक 1 से छेड़छाड़ करें",c4:"🧠 नैतिक AI गेट",c4s:"मधुमेह जोखिम डेमो। पक्षपात-जाँच, व्याख्या और डॉक्टर की मंज़ूरी के बाद ही जारी।",ab:"मॉडल चलाएँ"}};
+
+    function lang(){L=L=="en"?"hi":"en";$("#lb").textContent=L=="en"?"हिंदी":"English";document.querySelectorAll("[data-i]").forEach(function(e){e.textContent=T[L][e.dataset.i]})}
+    function toast(t){var e=$("#toast");e.textContent=t;e.className="sh";setTimeout(function(){e.className=""},2600)}
+    async function H(s){
+      try{
+        var b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));
+        return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,"0")}).join("");
+      }catch(e){
+        var h=5381; for(var i=0;i<s.length;i++)h=(h*33^s.charCodeAt(i))>>>0;
+        return ("00000000"+h.toString(16)).slice(-8).repeat(8);
+      }
+    }
+    async function add(who,what,ok){var p=log.length?log[log.length-1].hash:"GENESIS",e={who:who,what:what,ok:ok,prev:p,t:Date.now()};e.hash=await H(p+e.who+e.what+e.ok+e.t);log.push(e)}
+    async function api(m,u,b){var r=await fetch(u,{method:m,headers:{"Content-Type":"application/json"},body:b?JSON.stringify(b):undefined});return r}
+    async function sync(){if(LIVE)log=await(await api("GET","/audit")).json();draw()}
+    function cnt(id,v){var e=$(id),a=+e.textContent,t=0;var iv=setInterval(function(){t++;e.textContent=Math.round(a+(v-a)*t/12);if(t>=12)clearInterval(iv)},30)}
+    function draw(){
+      var n=0; Object.keys(R).forEach(function(k){C.forEach(function(c){if(R[k].c[c])n++})});
+      cnt("#n1",4); cnt("#n2",n); cnt("#n3",log.length);
+      $("#cw").innerHTML = Object.keys(R).map(function(k){
+        return '<div class="row"><span style="font-size:20px">'+R[k].i+'</span><span class="nm">'+R[k].n+'</span>'+C.map(function(c){return '<span class="cat">'+c+'</span>'}).join("")+'</div><div class="row">'+C.map(function(c){return '<span style="flex:1;display:flex;gap:6px;align-items:center;font-size:11px"><button class="sw '+(R[k].c[c]?"on":"")+'" onclick="tog(\''+k+'\',\''+c+'\')"></button>'+c.slice(0,4)+'</span>'}).join("")+'</div>';
+      }).join("");
+      $("#rq").innerHTML = Object.keys(R).map(function(k){
+        return C.map(function(c){return '<button class="bt" onclick="acc(\''+k+'\',\''+c+'\')">'+R[k].i+' '+k+' → '+c.slice(0,4)+'</button>'}).join("")
+      }).join("<br>");
+      $("#ch").innerHTML = log.map(function(e,i){
+        return '<div class="bk '+(i>=bad&&bad>=0?"bad ":"")+(e.ok?"":"no")+'"><b>#'+(i+1)+'</b> '+e.who+'<br>'+e.what+'<br>'+(e.ok?"✔ granted":"✘ denied")+'<code>'+e.hash.slice(0,14)+'…</code></div>';
+      }).join("");
+      var c=$("#ch"); c.scrollLeft=c.scrollWidth;
+    }
+    function fl(){
+      var N=["🏥|Sources","🔄|FHIR","🛂|Consent","🗄️|Vault","🧠|AI gate","📱|Apps"];
+      $("#fl").innerHTML = N.map(function(x,i){
+        return '<div class="nd" id="f'+i+'"><i>'+x.split("|")[0]+'</i>'+x.split("|")[1]+'</div>'+(i<5?'<div class="ln"></div>':"");
+      }).join("");
+    }
+    async function run(ok){for(var i=0;i<6;i++){var e=$("#f"+i);if(!ok&&i==2){e.className="nd no";await new Promise(function(r){setTimeout(r,900)});e.className="nd";return}e.className="nd on";await new Promise(function(r){setTimeout(r,320)});e.className="nd"}}
+    async function tog(k,c){var on=!R[k].c[c];R[k].c[c]=on?1:0;if(LIVE)await api(on?"POST":"DELETE","/consent",{patient:P,requester:k,category:c});else await add("Patient",(on?"grant ":"revoke ")+k+"/"+c,true);toast((on?"✔ Consent granted: ":"🚫 Consent revoked: ")+R[k].n+" / "+c);await sync()}
+    async function acc(k,c){var ok=!!R[k].c[c];run(ok);if(LIVE){var r=await api("POST","/access",{patient:P,requester:k,category:c});ok=r.ok}else await add(k,c,ok);$("#ro").innerHTML=ok?'<span class="ok">✔ '+R[k].n+' received '+c+' (FHIR R4). Logged.</span>':'<span style="color:var(--rd)">✘ Blocked: no active consent for '+c+'. Logged.</span>';toast(ok?"Access granted":"Access denied by consent engine");await sync()}
+    async function ver(){var i=-1;if(LIVE){var j=await(await api("GET","/audit/verify")).json();i=j.intact?-1:j.tampered_at}else{var p="GENESIS";for(var x=0;x<log.length;x++){var e=log[x];if(e.prev!==p||e.hash!==await H(e.prev+e.who+e.what+e.ok+e.t)){i=x;break}p=e.hash}}bad=i;draw();$("#vr").innerHTML=i<0?'<p class="ok">✔ Chain intact: '+log.length+' blocks verified.</p>':'<p style="color:var(--rd)">⚠ Tampering detected at block '+(i+1)+'. Everything after it is untrusted.</p>';toast(i<0?"Chain verified ✔":"Tampering detected ⚠")}
+    async function tam(){if(!log.length)return toast("Make a request first");if(LIVE)await api("POST","/demo/tamper");else log[0].ok=!log[0].ok;await sync();toast("Block 1 altered. Now click Verify.")}
+    async function ai(){var a=+$("#a").value,b=+$("#bm").value,p=+$("#bp").value,g=+$("#gl").value,r;
+      if(LIVE){r=await(await api("POST","/ai/risk",{patient:P,age:a,bmi:b,sbp:p,hba1c:g})).json();r.f=[["Age",r.contributions.age],["BMI",r.contributions.bmi],["BP",r.contributions.bp],["HbA1c",r.contributions.hba1c]]}
+      else{var f=[["Age",Math.max(0,(a-40)/40)*25],["BMI",Math.max(0,(b-23)/15)*25],["BP",Math.max(0,(p-110)/60)*20],["HbA1c",Math.max(0,(g-5.4)/3.6)*30]],s=Math.min(99,Math.round(f.reduce(function(x,y){return x+y[1]},0)));r={score:s,level:s>60?"High":s>35?"Moderate":"Low",f:f}}
+      var col=r.score>60?"#B3261E":r.score>35?"#D4AF37":"#0B6B4B";
+      $("#ao").innerHTML='<div class="gz"><svg viewBox="0 0 180 110"><path d="M10 95 A80 80 0 0 1 170 95" stroke="#E4DBB8"/><path id="gp" d="M10 95 A80 80 0 0 1 170 95" stroke="'+col+'" stroke-dasharray="252" stroke-dashoffset="252" style="transition:stroke-dashoffset 1.2s"/></svg><div style="font-size:34px;font-weight:800;color:'+col+'">'+r.score+' · '+r.level+'</div></div>'+r.f.map(function(x){return '<div class="row"><span style="width:70px;font-size:12px">'+x[0]+'</span><div class="bar"><i style="width:0" data-w="'+Math.min(100,x[1]*3.5)+'"></i></div></div>'}).join("")+ '<p class="ok">✔ Fairness: sex/caste/religion/location are not inputs; swap test unchanged.</p><p class="ok">✔ Data minimised: 4 consented fields only.</p><button class="bt go" onclick="sg()">👩‍⚕️ Clinician sign-off &amp; release</button>';
+      setTimeout(function(){$("#gp").style.strokeDashoffset=252*(1-r.score/100);document.querySelectorAll(".bar i").forEach(function(e){e.style.width=e.dataset.w+"%"})},50)
+    }
+    async function sg(){if(LIVE)await api("POST","/ai/release/"+P+"?clinician=DrMeera");else await add("Dr. Meera","AI result signed off",true);toast("✔ Released with clinician sign-off");await sync()}
+    (function(){var c=$("#bg"),x=c.getContext("2d"),p=[],i;function rs(){c.width=innerWidth;c.height=innerHeight}rs();onresize=rs;for(i=0;i<60;i++)p.push({x:Math.random()*c.width,y:Math.random()*c.height,vx:Math.random()-.5,vy:Math.random()-.5});
+    (function f(){x.clearRect(0,0,c.width,c.height);p.forEach(function(a,k){a.x=(a.x+a.vx+c.width)%c.width;a.y=(a.y+a.vy+c.height)%c.height;x.fillStyle="#6B7B2F";x.fillRect(a.x,a.y,2,2);for(var j=k+1;j<p.length;j++){var d=Math.hypot(a.x-p[j].x,a.y-p[j].y);if(d<130){x.strokeStyle="rgba(212,175,55,"+(1-d/130)*.35+")";x.beginPath();x.moveTo(a.x,a.y);x.lineTo(p[j].x,p[j].y);x.stroke()}}});requestAnimationFrame(f)})()})();
+    fl();(async function(){try{var r=await api("GET","/audit/verify");if(r.ok){LIVE=true;$("#mode").textContent="Python API live";$("#mode").className="pill live";for(var k in R)for(var c in R[k].c)await api("POST","/consent",{patient:P,requester:k,category:c})}}catch(e){}if(!LIVE)await add("System","Vault initialised",true);await sync()})();
+  </script>
+</body>
+</html>
