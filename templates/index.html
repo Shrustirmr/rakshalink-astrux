@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>RakshaLink · AstruX</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <canvas id="bg"></canvas>
+    <div class="w">
+      <div class="top">
+        <div class="logo">🛡️ RAKSHA<b>LINK</b> <span style="font-size:11px;color:var(--mu)">· AstruX · VIT Bhopal</span></div>
+        <div class="tg">
+          <span class="pill" id="mode">Browser demo</span>
+          <button class="lg" onclick="lang()" id="lb">हिंदी</button>
+        </div>
+      </div>
+
+      <div class="hero">
+        <h1 data-i="h1">Your health data. Your rules.</h1>
+        <p data-i="sub">One consent-first exchange where records travel, access is provable and AI needs a doctor's approval.</p>
+        <div class="st">
+          <div class="stat"><b id="n1">0</b><span data-i="s1">records unified</span></div>
+          <div class="stat"><b id="n2">0</b><span data-i="s2">active consents</span></div>
+          <div class="stat"><b id="n3">0</b><span data-i="s3">audit blocks</span></div>
+        </div>
+      </div>
+
+      <div class="flow" id="fl"></div>
+
+      <div class="g">
+        <div class="c">
+          <h2 data-i="c1">🔐 Consent wallet</h2>
+          <p class="s" data-i="c1s">Flip a switch. Access changes instantly and is logged.</p>
+          <div id="cw"></div>
+        </div>
+
+        <div class="c">
+          <h2 data-i="c2">⚡ Request simulator</h2>
+          <p class="s" data-i="c2s">Fire a request and watch it travel through the exchange.</p>
+          <div id="rq"></div>
+          <div id="ro" style="margin-top:12px;font-size:14px"></div>
+        </div>
+
+        <div class="c" style="grid-column:1/-1">
+          <h2 data-i="c3">⛓️ Tamper-evident audit chain</h2>
+          <p class="s" data-i="c3s">Every event is hash-linked to the one before it.</p>
+          <div>
+            <button class="bt go" onclick="ver()" data-i="vb">Verify integrity</button>
+            <button class="bt rd" onclick="tam()" data-i="tb">Tamper with block 1</button>
+          </div>
+          <div class="ch" id="ch"></div>
+          <div id="vr"></div>
+        </div>
+
+        <div class="c" style="grid-column:1/-1">
+          <h2 data-i="c4">🧠 Ethical-AI gate</h2>
+          <p class="s" data-i="c4s">Diabetes risk demo. Bias-checked, explained, released only with clinician sign-off.</p>
+          <div class="inp">
+            <label>Age<input id="a" type="number" value="52" /></label>
+            <label>BMI<input id="bm" type="number" value="29" /></label>
+            <label>Systolic BP<input id="bp" type="number" value="148" /></label>
+            <label>HbA1c %<input id="gl" type="number" value="7.9" step=".1" /></label>
+          </div>
+          <button class="bt" onclick="ai()" data-i="ab">Run model</button>
+          <div id="ao"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast"></div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
